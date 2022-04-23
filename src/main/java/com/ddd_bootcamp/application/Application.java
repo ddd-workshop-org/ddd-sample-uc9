@@ -4,6 +4,7 @@ import com.ddd_bootcamp.domain.Cart;
 import com.ddd_bootcamp.domain.Item;
 import com.ddd_bootcamp.domain.Price;
 import com.ddd_bootcamp.domain.Product;
+import com.ddd_bootcamp.domain.domain_service.CheckOutService;
 import com.ddd_bootcamp.domain.domain_service.CompetitorBasedPricer;
 
 import java.math.BigDecimal;
@@ -28,7 +29,10 @@ public class Application {
         System.out.println("Cart = " + cart);
 
         System.out.println("-------------------------------------------------------------------");
+
         System.out.println("Cart checked out = " + cart.checkOut());
+        //System.out.println("Cart checked out = " + CheckOutService.checkOut(cart));
+
         System.out.println("-------------------------------------------------------------------");
 
         //codeProblem8();
