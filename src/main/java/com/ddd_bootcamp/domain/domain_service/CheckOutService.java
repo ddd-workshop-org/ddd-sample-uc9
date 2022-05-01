@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class CheckOutService {
 
     public static Order checkOut(Cart cart) {
-        cart.checkOut();
+        cart.checkOut1();
         List<Item> items = cart.getItems();
         List<Product> products = items.stream().flatMap(item ->
                 item.getFlattenedProducts().stream()).collect(Collectors.toList());

@@ -57,6 +57,16 @@ public class Cart implements Entity<Cart> {
         return new Order(products);
     }
 
+
+    public void checkOut1() {
+        List<CartItem> cartItems = items.stream().map(item ->
+                new CartItem(item.getProductName(),
+                        item.getProductPrice(),
+                        item.getQuantity())).collect(Collectors.toList());
+
+        apply(new CartCheckedOutEvent(cartItems));
+    }
+
     private void apply(ItemAddedToCartEvent event) {
         events.add(event);
         this.items.add(new Item(new Product(event.getProductName(), event.getPrice()), event.getQuantity()));
